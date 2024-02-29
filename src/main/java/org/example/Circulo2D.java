@@ -52,4 +52,12 @@ public class Circulo2D {
         this.cy = c.getCy();
         this.radio = c.getRadio();
 }
-}
+
+if (this.radio >= c.getRadio()){
+        return this.radio >= c.getRadio()
+    }else
+            return c;{
+    }
+    }
+
+
