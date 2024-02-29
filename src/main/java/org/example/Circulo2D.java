@@ -47,17 +47,46 @@ public class Circulo2D {
                 ", radio:" + radio +
                 '}';
     }
-    public void copiarDeCirculo(Circulo2D c){
+
+    public void copiarDeCirculo(Circulo2D c) {
         this.cx = c.getCx();
         this.cy = c.getCy();
         this.radio = c.getRadio();
-}
+    }
 
-if (this.radio >= c.getRadio()){
+    public Circulo2D obtenerCopia() {
+        return new Circulo2D(cx, cy, radio);
+    }
+
+    public boolean equals(Circulo2D c) {
+        return this.cx == c.getCx() && this.cy == c.getCy() && this.radio == c.getRadio();
+    }
+
+    public double calcularArea() {
+        return Math.PI * Math.pow(radio, 2);
+    }
+
+    public double calcularPerimetro() {
+        return 2 * Math.PI * radio;
+    }
+
+    public boolean estaDentro(int x, int y) {
+        return Math.sqrt(Math.pow(x - cx, 2) + Math.pow(y - cy, 2)) < radio;
+    }
+
+    public Circulo2D obtenerCirculoQueLoContiene(Circulo2D c) {
+        if (this.radio >= c.getRadio()) {
+            return this;
+        } else {
+            return c;
+        }
+    }
+}
+if(this.radio >=c.getRadio()){
         return this.radio >= c.getRadio()
-    }else
-            return c;{
+    else
+        return c;
     }
-    }
+
 
 
